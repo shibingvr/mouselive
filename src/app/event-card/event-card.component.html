@@ -1,0 +1,20 @@
+<div
+    class="card" style="width: 14rem;"
+    *ngIf="!config.isNewMode && data"
+
+    >
+    <img src="{{data.imgsrc}}" class="card-img-top img" alt="...">
+    <div class="card-body">
+        <h5 class="card-title" (click)="openDetailView()">{{data.title}}</h5>
+        <label class="address">{{data.address}}</label>
+        <label class="date">{{data.date}}</label>
+    </div>
+</div>
+
+<div class="card new" style="width: 14rem;" *ngIf="config.isNewMode"  (click)="onClickNew()">
+    <img src="../../assets/img/add.png" class="card-img-top img" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Add More</h5>
+    </div>
+  <!-- -->
+</div>

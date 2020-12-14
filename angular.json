@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "mouselive"
+    }
+  },
+  "defaultProject": "mouselive",
+  "cli": {
+    "analytics": "d6448a0a-c060-4706-9935-4f656f89fe35"
+  }
 }

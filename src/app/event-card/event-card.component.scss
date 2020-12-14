@@ -1,0 +1,47 @@
+:host{
+    margin-right: 10px;
+    height: 275px;
+    .img{
+        width: 222px;
+        height: 185px;
+    }
+    .address{
+        float: left;
+        max-width: calc(100% - 73px);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+    }
+
+    .date{
+        float: right;
+    }
+
+    .card-title{
+        cursor: pointer;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    .new{
+        text-align: center;
+        top:-44px;
+        .img{
+            width: 50px;
+            height:  50px;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            /* position: absolute; */
+            margin-top: 92px;
+            cursor: pointer;
+        }
+
+        &:hover{
+            background-color: #EEE;
+            cursor: pointer;
+        }
+    }
+}

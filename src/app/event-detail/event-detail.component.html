@@ -1,0 +1,68 @@
+<div class="ml-breadcrumb">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item" aria-current="page" (click)="showList()">
+                <h4>
+                    <span>&#8592;</span>
+                    {{breadcrumbText}}
+                </h4>
+            </li>
+        </ol>
+    </nav>
+</div>
+<div class="row">
+    <div class="col-sm-3">
+        <form [formGroup]="eventForm">
+            <div class="mb-3">
+                <label for="title" class="form-label">Event Name</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="title"
+                    formControlName="title"
+                    (change)="showPreview()"
+                >
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="address"
+                    formControlName="address"
+                    (change)="showPreview()"
+                >
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="date"
+                    formControlName="date"
+                    (change)="showPreview()"
+                >
+            </div>
+
+            <button
+                type="button"
+                class="btn btn-primary"
+                (click)="addEvent()"
+                *ngIf="!event?.id"
+                >Add</button>
+            <button
+                type="button"
+                class="btn btn-primary"
+                (click)="updateEvent()"
+                *ngIf="event?.id"
+                >Update</button>
+        </form>
+    </div>
+    <div class="col-sm-3">
+        <h5>Preview</h5>
+        <app-event-card [data]="event"></app-event-card>
+    </div>
+    <div class="alert alert-{{notifyType}} notify" role="alert" *ngIf="isShowNotify">
+       {{notifyMsg}}
+    </div>
+</div>
