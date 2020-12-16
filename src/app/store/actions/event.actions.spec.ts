@@ -1,4 +1,18 @@
-import { AddEventAction, AddEventFailureAction, AddEventSuccessAction, EventActions, GetEventAction, GetEventFailureAction, GetEventSuccessAction, LoadEventsAction, LoadEventsFailureAction, LoadEventsSuccessAction, UpdateEventAction, UpdateEventFailureAction, UpdateEventSuccessAction } from "./event.actions";
+import {
+    AddEventAction,
+    AddEventFailureAction,
+    AddEventSuccessAction,
+    EventActions,
+    GetEventAction,
+    GetEventFailureAction,
+    GetEventSuccessAction,
+    LoadEventsAction,
+    LoadEventsFailureAction,
+    LoadEventsSuccessAction,
+    UpdateEventAction,
+    UpdateEventFailureAction,
+    UpdateEventSuccessAction
+} from './event.actions';
 
 describe('Event Actions', () => {
     const event = {

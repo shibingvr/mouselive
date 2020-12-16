@@ -1,5 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
-import { ComponentFixture, TestBed, inject, async  } from '@angular/core/testing';
+import { ComponentFixture, TestBed, inject, async, waitForAsync  } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -12,7 +12,7 @@ import { EventReducer } from '../store/reducers/event.reducer';
 import { EventCardComponent } from './event-card.component';
 
 class MokeRouter {
-  navigate : ()=>void
+  navigate: () => void;
 }
 
 describe('EventCardComponent', () => {
@@ -50,7 +50,7 @@ describe('EventCardComponent', () => {
   });
 
   describe('#openDetailView', () => {
-    it('should go detail view with <id>', async(inject([Router], (router) => {
+    it('should go detail view with <id>', waitForAsync(inject([Router], (router) => {
       component.data = {
         id: 1,
         title: 'Event 1',
@@ -68,7 +68,7 @@ describe('EventCardComponent', () => {
   });
 
   describe('#onClickNew', () => {
-    it('should go new form', async(inject([Router], (router) => {
+    it('should go new form', waitForAsync(inject([Router], (router) => {
 
       spyOn(router, 'navigate');
 
