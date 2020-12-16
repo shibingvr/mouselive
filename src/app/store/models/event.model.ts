@@ -5,3 +5,7 @@ export class EventModel {
     date?: string;
     imgsrc?: string;
 }
+
+export class EventRespModel {
+    data?: any;
+}

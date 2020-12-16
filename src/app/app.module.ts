@@ -12,6 +12,12 @@ import { HomeComponent } from './home/home.component';
 import { EventCardComponent } from './event-card/event-card.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { FeatureModule } from './feature/feature.module';
+import { StoreModule } from '@ngrx/store';
+import { EventReducer } from './store/reducers/event.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { EventsEffects } from './store/effects/events.effects';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BreadcrumbReducer } from './store/reducers/breadcrumb.reducer';
 
 
 @NgModule({
@@ -31,7 +37,12 @@ import { FeatureModule } from './feature/feature.module';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation: true}
     ),
-    FeatureModule
+    StoreModule.forRoot({
+      events: EventReducer,
+      breadcrumb: BreadcrumbReducer
+    }),
+    EffectsModule.forRoot([EventsEffects]),
+    NgbModule
   ],
   providers: [InMemoryDataService],
   bootstrap: [AppComponent]

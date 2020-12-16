@@ -16,6 +16,19 @@
     </div>
   </div>
 </nav>
+
+<div class="ml-breadcrumb">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item" aria-current="page">
+        <h5>
+          <span *ngIf="(breadcrumb$ | async)?.onClick" (click)="onClickBR()">&#8592;</span>
+          {{(breadcrumb$ | async)?.title}}
+        </h5>
+      </li>
+    </ol>
+  </nav>
+</div>
 <div class="container-fluid">
   <router-outlet></router-outlet>
 </div>

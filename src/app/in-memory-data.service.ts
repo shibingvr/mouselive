@@ -1,5 +1,5 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { EventModel } from './models/event-model';
+import { EventModel } from './store/models/event.model';
 
 export class InMemoryDataService implements InMemoryDbService {
   createDb(): any {
@@ -15,7 +15,7 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 2,
         title: 'Event 2' ,
         address: 'NY USA' ,
-        date: '13/11/2010',
+        date: '2020-12-1',
         imgsrc: '../../assets/img/download.png'
       },
     ];

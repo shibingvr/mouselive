@@ -1,17 +1,35 @@
 <div class="home">
-    <div class="ml-breadcrumb">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item active" aria-current="page">
-                    <h4>Home</h4>
-                </li>
-            </ol>
-        </nav>
+
+    <div class="row">
+        <div class="col">
+            <div
+             class="d-inline-flex"
+             *ngIf="(loading$ | async) === false"
+            >
+                <app-event-card
+                    class="d-inline-flex"
+                    *ngFor="let ev of events$ | async"
+                    [data] = "ev"
+                ></app-event-card>
+
+            </div>
+
+        <app-event-card
+            class="d-inline-flex"
+            [config]="loadingEventConfig"
+             *ngIf="loading$ | async"
+        >
+        </app-event-card>
+
+        <app-event-card
+            class="d-inline-flex"
+            [config]="newEventConfig"
+            *ngIf="(loading$ | async) === false"
+        >
+        </app-event-card>
+
+        </div>
+
     </div>
-    <app-event-card
-        class="d-inline-flex"
-        *ngFor="let ev of events"
-        [data] = "ev"
-    ></app-event-card>
-    <app-event-card class="d-inline-flex" [config]="newEventConfig"></app-event-card>
+
 </div>
