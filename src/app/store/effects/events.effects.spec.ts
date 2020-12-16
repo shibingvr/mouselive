@@ -32,6 +32,7 @@ describe('EventsEffects', () => {
                 { provide: EventsService, useClass: MockEventsService }
             ],
         }).compileComponents();
+
     });
 
 
