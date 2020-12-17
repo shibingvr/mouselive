@@ -45,7 +45,7 @@ export class EventsEffects {
     @Effect() updateEvent$ = this.actions$.pipe(
         ofType<UpdateEventAction>(EventActions.UPDATE_EVENT),
         mergeMap(
-            (data) => this.eventsService.addEvent(data.payload).pipe(
+            (data) => this.eventsService.updateEvent(data.payload).pipe(
                 map( res => new UpdateEventSuccessAction(res)),
                 catchError(err => of(new UpdateEventFailureAction(err)))
             )

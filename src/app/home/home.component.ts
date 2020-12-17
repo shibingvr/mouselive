@@ -35,7 +35,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.store.dispatch(new SetBreadcrumbAction({title: 'Home', onClick: undefined}));
+    setTimeout(() => {
+      this.store.dispatch(new SetBreadcrumbAction({title: 'Home', onClick: undefined}));
+    }, 200);
 
     this.events$ = this.store.select(store => store.events.list);
     this.loading$ = this.store.select(store => store.events.loading);

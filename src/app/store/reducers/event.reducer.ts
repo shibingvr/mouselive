@@ -24,7 +24,8 @@ export function EventReducer(
         case EventActions.LOAD_EVENTS :
             return {
                 ...state,
-                loading: true
+                loading: true,
+                selectedEvent:null
             };
             break;
 
@@ -32,7 +33,8 @@ export function EventReducer(
             return {
                 ...state,
                 list : action.payload,
-                loading: false
+                loading: false,
+                selectedEvent: null
             };
             break;
 
@@ -40,7 +42,8 @@ export function EventReducer(
             return {
                 ...state,
                 error: action.payload,
-                loading : false
+                loading : false,
+                selectedEvent: null
             };
             break;
 
